@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'screens/categories_page.dart';
+import './screens/category_meals_page.dart';
+
+import './screens/meal_details_page.dart';
+import './screens/tabs_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,8 +19,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
         accentColor: Colors.amber,
+        textTheme: ThemeData.light().textTheme.copyWith(
+              headline5: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.w800,
+              ),
+            ),
       ),
-      home: const CategoriesPage(),
+      home: const TabsPage(),
+      routes: {
+        CategoryMealsPage.routeName: (ctx) => CategoryMealsPage(),
+        MealDetailsPage.routeName: (ctx) => MealDetailsPage(),
+      },
     );
   }
 }
