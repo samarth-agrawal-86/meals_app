@@ -46,7 +46,7 @@ class _FiltersPageState extends State<FiltersPage> {
                 widget.filterHandler(appliedFilters);
               });
             },
-            icon: Icon(Icons.save),
+            icon: const Icon(Icons.save),
           ),
         ],
       ),

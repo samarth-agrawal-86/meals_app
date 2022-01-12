@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import './categories_page.dart';
 import './favorites_page.dart';
+import '../models/meal.dart';
 
 class TabsPage extends StatefulWidget {
-  const TabsPage({Key? key}) : super(key: key);
+  final List<Meal> favoriteMeals;
+
+  TabsPage({required this.favoriteMeals});
 
   @override
   _TabsPageState createState() => _TabsPageState();
@@ -24,9 +27,11 @@ class _TabsPageState extends State<TabsPage> {
             pageIndex = value;
           });
         },
-        children: const [
+        children: [
           CategoriesPage(),
-          FavoritesPage(),
+          FavoritesPage(
+            favoriteMeals: widget.favoriteMeals,
+          ),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
