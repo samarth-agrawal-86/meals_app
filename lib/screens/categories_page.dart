@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app/screens/category_meals_page.dart';
 
+import './category_meals_page.dart';
 import '../dummy_data.dart';
+import '../widgets/main_drawer.dart';
 
 class CategoriesPage extends StatelessWidget {
   const CategoriesPage({Key? key}) : super(key: key);
+  static const routeName = '/categories';
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +14,7 @@ class CategoriesPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('DeliMeals'),
       ),
+      drawer: MainDrawer(),
       body: GridView(
         padding: const EdgeInsets.all(10),
         scrollDirection: Axis.vertical,
